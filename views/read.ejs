@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body> 
+    <div class="w-full h-full bg-zinc-900 text-white p-10">
+        <a class="text-blue-500 px-2 " href="/">Home</a>
+        <h1 class="text-3xl mt-5 tracking-tighter mb-5">All Users</h1>
+        <div class="users flex flex-wrap gap-3 ">
+            <% if(users.length == 0) { %>
+                <div class="flex flex-col">
+                    <h3>No Users Yet</h3>
+                    <a class="mt-5 bg-blue-500 p-2 rounded-lg" href="/">Create User</a>
+                </div>
+            <% } else {%>
+                     
+                    <% users.forEach(user => { %>
+                        <div class="user w-72 p-2 bg-zinc-800 rounded-md">
+                        <div class="p-2 w-full h-72 bg-zinc-700 rounded-lg overflow-hidden">
+                            <img class="w-full h-full object-cover object-centre" src="<%= user.image %>" alt="">
+                        </div>
+                        <h3 class="text-xl tracking-tighter mt-1 "> <%= user.name %> </h3>
+                        <h5 class="text-zinc-500"> <%= user.email %></h5>
+                        <div class="flex gap-3 mt-7 ">
+                            <a class="text-zinc-300 px-2 " href="/edit/<%= user._id %>">Edit User</a>
+                            <a class="text-ms bg-red-500 px-2 rounded-md "href="/delete/<%= user._id %>">Delete User</a>
+                        </div>
+                    </div>
+                    <% }); %>
+                <% } %>
+        </div>
+    </div>
+</body>
+</html>

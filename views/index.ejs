@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body> 
+    <!-- Parent container -->
+    <div class="w-full h-full bg-zinc-900 text-white relative">
+
+        <div class="nav mb-5 px-7 py-2">
+            <a class="text-blue-500" href="./read">All Users</a>
+        </div>
+
+        <!-- Heading at top-left -->
+        <h1 class="absolute top-15 left-5 text-3xl tracking-tighter">Create User</h1>
+
+        <!-- Form centered in the screen -->
+        <div class="flex justify-center items-center h-full">
+            <form action="/create" method="post" class="flex flex-col gap-3 w-full max-w-md">
+                <!-- Input fields -->
+                <input class="px-5 py-2 bg-zinc-700 rounded-md border border-zinc-500 outline-none bg-transparent" type="text" placeholder="Enter Your Name" name="name">
+                <input class="px-5 py-2 bg-zinc-700 rounded-md border border-zinc-500 outline-none bg-transparent" type="text" placeholder="Email" name="email">
+                <input class="px-5 py-2 bg-zinc-700 rounded-md border border-zinc-500 outline-none bg-transparent" type="text" placeholder="Image URL" name="imageurl">
+                
+                <!-- Submit Button -->
+                <input class="bg-blue-500 w-50 px-5 py-2 m rounded-md cursor-pointer self-center hover:bg-blue-600 transition duration-300 text-white" type="submit" value="Create User">
+            </form>
+        </div>
+    </div>    
+</body>
+</html>

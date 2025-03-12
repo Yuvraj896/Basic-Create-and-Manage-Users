@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+</head>
+<body> 
+    <div class="w-full h-full bg-zinc-900 text-white">
+        <div class="nav mb-5 px-7 py-2">
+            <a class="text-blue-500" href="/read">All Users</a>
+        </div>
+
+        <div class="flex justify-center h-full">
+            <form class="flex flex-col gap-3
+            max-w-md w-full" action="/update/<%= user._id %>" method="post">
+                <input class="px-5 py-2 bg-zinc-700 rounded-md border border-zinc-500 outline-none bg-transparent" type="text" name="name" value="<%= user.name %>">
+
+                <input class="px-5 py-2 bg-zinc-700 rounded-md border border-zinc-500 outline-none bg-transparent" type="text" name="email" value="<%= user.email %>">
+
+                <input class="px-5 py-2 bg-zinc-700 rounded-md border border-zinc-500 outline-none bg-transparent" type="text" name="imageurl" value="<%= user.image %>">
+
+                <input class="bg-yellow-500 w-50 px-5 py-2 rounded-md cursor-pointer self-center hover:bg-yellow-600 transition duration-300 text-black" type="submit" value="Update User">
+
+            
+            </form>
+        </div>
+    </div>
+</body>
+</html>
